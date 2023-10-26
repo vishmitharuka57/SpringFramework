@@ -7,15 +7,18 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 public class AppInitializer {
     public static void main(String[] args) {
         AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext();
-        
-        Runtime.getRuntime().addShutdownHook(new Thread(new Runnable() {
+
+       /* Runtime.getRuntime().addShutdownHook(new Thread(new Runnable() {
             @Override
             public void run() {
                 System.out.println("JVM about to shutdown");
                 ctx.close();
             }
         }));
+*/
 
+        ctx.registerShutdownHook();
+        
         ctx.register(AppConfig.class);
         ctx.refresh();
 
