@@ -7,4 +7,6 @@ public class SpringBean {
     public SpringBean() {
         System.out.println("Spring bean object created");
     }
+
+
 }

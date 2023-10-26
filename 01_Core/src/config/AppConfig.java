@@ -6,4 +6,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 @ComponentScan(basePackages = "bean")
 public class AppConfig {
+    public AppConfig() {
+        System.out.println("App config object created");
+    }
 }
